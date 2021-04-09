@@ -22,8 +22,7 @@ namespace ProyectoFinal.Models
         public int Crear(Usuario usu)
         {
             Conectar();
-            SqlCommand comando = new SqlCommand(" insert into usuarios(Nombre, Edad, Email, Telefono, Ciudad, Interes) values " +
-                "(@Nombre, @Edad, @Email, @Telefono, @Ciudad, @Interes)", conexion);
+            SqlCommand comando = new SqlCommand(" insert into usuarios(Nombre, Edad, Email, Telefono, Ciudad, Interes) values (@Nombre, @Edad, @Email, @Telefono, @Ciudad, @Interes)", conexion);
 
             comando.Parameters.Add("@Nombre", SqlDbType.VarChar);
             comando.Parameters.Add("@Edad", SqlDbType.Int);
@@ -66,7 +65,7 @@ namespace ProyectoFinal.Models
                     Email = registros["Email"].ToString(),
                     Telefono = int.Parse(registros["Telefono"].ToString()),
                     Ciudad = registros["Ciudad"].ToString(),
-                    Interes = Boolean.Parse(registros["Interes"].ToString())
+                    Interes = bool.Parse(registros["Interes"].ToString())
                 };
 
                 usuarios.Add(usu);

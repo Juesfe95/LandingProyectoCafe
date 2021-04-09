@@ -20,7 +20,7 @@ namespace ProyectoFinal.Models
         [Range(15,200, ErrorMessage = "La edad debe ser un valor positivo Mayor a 15 ")]
         public int Edad { get; set; }
         public string Ciudad { get; set; }
-        public Boolean Interes { get; set; }
+        public bool Interes { get; set; }
 
     }
 }

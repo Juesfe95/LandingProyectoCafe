@@ -1,7 +1,92 @@
-﻿
+﻿@model ProyectoFinal.Models.Usuario
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="col-12">
+        <br />
+        <br />
+        <section class="col-12 row">
+            <div class="container col-5" id="nosotros" style="margin-top:-4rem; text-align:center">
+                <br />
+                <h3 style="color:#ce871c;">Conocenos</h3>
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="mb-2">
+                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="mb-2">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="mb-2">
+                            @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Ciudad, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="mb-2">
+                            @Html.EditorFor(model => model.Ciudad, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Ciudad, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Interes, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="mb-2">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.Interes)
+                                @Html.ValidationMessageFor(model => model.Interes, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 mb-2">
+                            <button type="submit" class="btn btn-info">Contactar</button>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="col-5" id="propuesta" >
+                <h4 style="color:#ce871c; text-align:center"> Somos una micro empresa Quindiana.</h4>
+                <br />
+                <br />
+                Cafeteros por tradicion, expertos en produccion de cafe gourmet especial. realizamos todo el
+                proceso de cultivo, beneficio y aprovechamiento del cafe, seleccionando la mejor semilla para la
+                siembra, aplicamos estandares de alta calidad en el cuidado, recoleccion y beneficio del cafe,
+                presentando almendra selecta para la tostion, resaltando el aroma y sabor de nuestro cafe logrando
+                una especialidad que solo la dedicacion y nuestra maestria puede generar. Con toda la calidad que
+                caracteriza el cafe colombiano.
+            </div>
+            <div class="col-6"></div>
+            <div class="col-2">
+                <b>@Html.ActionLink("Ver listado", "List")</b>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
 

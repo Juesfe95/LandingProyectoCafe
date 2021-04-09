@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title - Landing page Asp.net</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
         a.my-class {
             color: #000000;
             text-decoration: none;
@@ -19,46 +23,91 @@
 
         .btn1 {
             background-color: #ff8138 !important;
+            text-decoration: none;
+            border: none !important;
+        }
+        /*Header*/
+        header {
+            width: 100%;
+            height: 300px;
+            background: #ee0979;
+            background: -webkit-linear-gradient(to right, hsla(331, 93%, 48%, 0.582), hsla(25, 100%, 50%, 0.582)),url('https://lavibrante.com/wp-content/uploads/2020/05/chinchina-copia-822x472.jpeg');
+            background: linear-gradient(to right, hsla(0, 0%, 21%, 0.582), hsla(56, 71%, 40%, 0.472)), url('https://lavibrante.com/wp-content/uploads/2020/05/chinchina-copia-822x472.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
         }
 
-        #logo {
-            margin-left: 3rem;
-            margin-top: 1rem;
-            background-image: url('https://archivos.territorio.la/archivos/clases/1045pxnSenanColombianlogonsvgnnn825f343e0c268bannn___795ff91afcb9ca2___.png');
-            width: 90%;
-            height: 90%;
-            background-position: center;
+        nav {
+            text-align: right;
+            padding: 2% 2% 0 0;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        header .textosHeader {
+            display: flex;
+            height: 18%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            text-shadow: 0.1em 0.1em 0.2em rgb(32, 32, 32);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .textosHeader h1 {
+            font-size: 40px;
+        }
+
+        #nosotros {
+            background-color: rgba(154, 155, 153, 0.24);
             background-size: cover;
+            height: 32rem;
+            width: 40%;
+            margin-left: 0%;
+        }
+
+        #propuesta {
+            height: 32rem;
+            width: 40%;
+            margin-left: 3rem;
+            margin-top: -2rem;
+            font-size: 20px;
+            text-align:justify;
         }
     </style>
 </head>
 <body>
-    <div>
-        <div class="col-12" style="background-color:#31b333; height:100px;" id="nav">
-            <div class="container row" style="padding-top: 2px;">
-                <div class="col-2">
-                    <div id="logo" style="width:70px; height:70px"></div>
-                </div>
-                <div class="col-2" style="margin-top:2rem">
-                    <button type="button" class="btn btn-success btn1"> @Html.ActionLink("Registrar", "Create", null, new { @class = "my-class" })</button>
 
-                </div>
-                <div class="col-2" style="margin-top:2rem">
-                    <button type="button" class="btn btn-success btn1">@Html.ActionLink("Listado", "List", null, new { @class = "my-class" })</button>
-                </div>
-                <div class="col-2" style="margin-top:2rem">
-                    <button type="button" class="btn btn-success btn1">@Html.ActionLink("Buscar", "Vistas3", null, new { @class = "my-class" })</button>
-                </div>
-                <div class="col-2"></div>
-                <div class="col-1" style="margin-top:2rem"> <h2>SIENA</h2></div>
-
-            </div>
+    <header>
+        <nav>
+            <button type="button" class="btn btn-success btn1"> @Html.ActionLink("Inicio", "Index", null, new { @class = "my-class" })</button>
+        </nav>
+     
+        <section class="textosHeader">
+            <h1>Chinchina Cafe y tradicion</h1>
+            <br>
+            <h2>Encuentra un excelente cafe y recibelo en la comodidad de tu hogar</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                 style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,149.97 349.20,-49.98 500.00,49.98 L500.00,149.97 L0.00,149.97 Z"
+                      style="stroke: none; fill: #fff;"></path>
+            </svg>
         </div>
-    </div>
+    </header>
     @RenderBody()
-    </div>
     <br />
-    <div class="row" style="background-color:#31b333; height:50px; position:fixed; width:102%; bottom: 0; text-align:center">
+    <div class="row" style="background-color: #A9dfbf; height: 50px; position: fixed; width: 102%; bottom: 0; text-align: center">
         <div class="col-4"></div>
         <div class="col-4">
             <footer style="margin-top:1rem;">
